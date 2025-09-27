@@ -1,0 +1,50 @@
+---
+// Hero.astro - Hero section with headline, subheadline, CTA
+---
+
+<section class="bg-gradient-to-br from-blue-50 to-white py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-4xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        Accelerate Your Career with
+        <span class="text-blue-600">Personal Mentorship</span>
+      </h1>
+
+      <p class="text-xl sm:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+        Join our exclusive pilot program and get personalized guidance from industry experts.
+        Break through plateaus, gain clarity, and achieve your professional goals faster.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <button
+          onclick="document.getElementById('signup').scrollIntoView({behavior: 'smooth'})"
+          class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+        >
+          Start Your Journey Today
+        </button>
+
+        <button
+          onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})"
+          class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-200"
+        >
+          Learn How It Works
+        </button>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
+        <div class="text-center">
+          <div class="text-2xl font-bold text-blue-600">1:1</div>
+          <div class="text-gray-600">Personal Sessions</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-blue-600">Weekly</div>
+          <div class="text-gray-600">Progress Calls</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-blue-600">24/7</div>
+          <div class="text-gray-600">Support Access</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
