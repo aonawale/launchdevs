@@ -1,10 +1,12 @@
 ---
+import { SITE_CONFIG } from '../config/site.ts';
+
 export interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = "Transform your career with personalized mentorship" } = Astro.props;
+const { title, description = SITE_CONFIG.description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -25,7 +27,7 @@ const { title, description = "Transform your career with personalized mentorship
           <div class="flex items-center">
             <h1 class="text-xl font-bold text-gray-900">
               <a href="/" class="hover:text-blue-600 transition-colors">
-                Code Career Coach
+                {SITE_CONFIG.name}
               </a>
             </h1>
           </div>
@@ -53,7 +55,7 @@ const { title, description = "Transform your career with personalized mentorship
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="text-center">
           <p class="text-gray-600">
-            © {new Date().getFullYear()} Career Accelerator. All rights reserved.
+            © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
           </p>
         </div>
       </div>

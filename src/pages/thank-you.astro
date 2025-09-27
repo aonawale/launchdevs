@@ -1,0 +1,65 @@
+---
+import Layout from '../components/Layout.astro';
+import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
+---
+
+<Layout title={`Thank You - ${SITE_CONFIG.name}`}>
+  <div class="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center py-12 px-4">
+    <div class="max-w-md mx-auto text-center">
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+        <!-- Success Icon -->
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+        </div>
+
+        <h1 class="text-2xl font-bold text-gray-900 mb-4">
+          Thank You for Your Interest!
+        </h1>
+
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          I've received your information and will personally review your submission.
+          You can expect to hear from me within 24 hours to schedule our free consultation call.
+        </p>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h2 class="font-semibold text-blue-900 mb-2">What Happens Next?</h2>
+          <ul class="text-sm text-blue-800 text-left space-y-1">
+            <li>• I'll review your background and goals</li>
+            <li>• We'll schedule a 30-minute consultation call</li>
+            <li>• Discuss how I can help your career transition</li>
+            <li>• Create a personalized plan if we're a good fit</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <a
+            href="/"
+            class="block w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          >
+            Return to Homepage
+          </a>
+
+          <p class="text-sm text-gray-500">
+            Questions? Email me at
+            <a href={getEmailLink('Question about consultation')} class="text-blue-600 hover:underline">
+              {SITE_CONFIG.email}
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="mt-8 text-center">
+        <p class="text-gray-600 text-sm">
+          In the meantime, feel free to connect with me on
+          <a href={SITE_CONFIG.social.linkedin} class="text-blue-600 hover:underline">LinkedIn</a>
+          or check out my
+          <a href={SITE_CONFIG.social.github} class="text-blue-600 hover:underline">GitHub</a>
+          for software engineering examples.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

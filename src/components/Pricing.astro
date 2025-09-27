@@ -1,12 +1,13 @@
 ---
-// Pricing.astro - Single card with $199/month pilot cohort offer and join button
+import { SITE_CONFIG } from '../config/site.ts';
+// Pricing.astro - Single card with monthly offer and join button
 ---
 
 <section id="pricing" class="py-20 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-        Personalized Mentorship Investment
+        Software Engineering Mentorship
       </h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
         Get dedicated guidance from an experienced software engineer to accelerate your journey
@@ -19,7 +20,7 @@
       <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden relative">
         <!-- Popular Badge -->
         <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-3 px-6">
-          <span class="text-sm font-semibold uppercase tracking-wide">🚀 Pilot Cohort - Limited Time</span>
+          <span class="text-sm font-semibold uppercase tracking-wide">🚀 Limited Spots Available</span>
         </div>
 
         <div class="p-8">
@@ -27,10 +28,10 @@
             <h3 class="text-2xl font-bold text-gray-900 mb-2">1:1 Mentorship Program</h3>
             <p class="text-gray-600 mb-6">Personalized guidance to launch your software engineering career</p>
 
-            <div class="mb-4">
-              <span class="text-5xl font-bold text-gray-900">$150</span>
-              <span class="text-xl text-gray-600">/month</span>
-            </div>
+                <div class="mb-4">
+                  <span class="text-5xl font-bold text-gray-900">${SITE_CONFIG.pricing.monthly}</span>
+                  <span class="text-xl text-gray-600">/month</span>
+                </div>
 
             <div class="text-sm text-gray-600 mb-6">
               <p>Affordable monthly investment in your future</p>
@@ -83,7 +84,7 @@
             onclick="document.getElementById('signup').scrollIntoView({behavior: 'smooth'})"
             class="w-full bg-blue-600 text-white py-4 px-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl mb-4"
           >
-            Join Pilot Cohort
+              Start Your Journey
           </button>
 
           <!-- Guarantees -->
@@ -112,7 +113,7 @@
         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
         </svg>
-        Only 20 spots available in the pilot cohort
+        Limited mentorship spots available
       </div>
     </div>
   </div>
