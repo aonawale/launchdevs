@@ -31,13 +31,6 @@ export const SITE_CONFIG = {
   ],
 } as const;
 
-// Helper function to get full URL
-export function getFullUrl(path: string = ''): string {
-  // In Astro, you can access the site URL from import.meta.env
-  const baseUrl = import.meta.env.SITE || 'https://codecareercoach.com';
-  return `${baseUrl}${path}`;
-}
-
 // Helper function for formatted email
 export function getEmailLink(subject?: string): string {
   const emailSubject = subject ? `?subject=${encodeURIComponent(subject)}` : '';
