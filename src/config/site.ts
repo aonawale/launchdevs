@@ -1,24 +1,19 @@
 // Site configuration constants
 export const SITE_CONFIG = {
   // Business Information
-  name: 'Code Career Coach',
-  description: 'Personal mentorship to help you launch your software engineering career',
+  name: 'LaunchDevs',
+  description: 'Personal mentorship to launch your software engineering career',
 
   // Contact Information
-  email: 'ahmed@codecareercoach.com',
+  email: 'ahmed@launchdevs.io',
 
   // Social Links (add your actual links when ready)
   social: {
-    linkedin: '#', // Replace with your LinkedIn URL
-    twitter: '#',  // Replace with your Twitter URL (optional)
-    github: '#',   // Replace with your GitHub URL (optional)
+    linkedin: 'https://www.linkedin.com/in/ahmedonawale', // Replace with your LinkedIn URL
+    twitter: 'https://github.com/aonawale',  // Replace with your Twitter URL (optional)
+    github: 'https://x.com/ahmedonawale',   // Replace with your GitHub URL (optional)
   },
 
-  // Business Details
-  pricing: {
-    monthly: 150,
-    currency: 'USD',
-  },
 
   // Meta Information
   author: 'Ahmed Onawale',

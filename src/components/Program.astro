@@ -1,26 +1,25 @@
 ---
-import { SITE_CONFIG } from '../config/site.ts';
-// Pricing.astro - Single card with monthly offer and join button
+// Program.astro - Free mentorship program details
 ---
 
-<section id="pricing" class="py-20 bg-gray-50">
+<section id="program" class="py-20 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-        Software Engineering Mentorship
+        Free Software Engineering Mentorship
       </h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
         Get dedicated guidance from an experienced software engineer to accelerate your journey
-        into tech. Flexible monthly commitment with no long-term contracts.
+        into tech. Completely free — no hidden costs, no contracts, just genuine support.
       </p>
       <div class="w-20 h-1 bg-blue-600 mx-auto mt-6"></div>
     </div>
 
     <div class="max-w-md mx-auto">
       <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden relative">
-        <!-- Popular Badge -->
-        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-3 px-6">
-          <span class="text-sm font-semibold uppercase tracking-wide">🚀 Limited Spots Available</span>
+        <!-- Free Badge -->
+        <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white text-center py-3 px-6">
+          <span class="text-sm font-semibold uppercase tracking-wide">🎯 100% Free Program</span>
         </div>
 
         <div class="p-8">
@@ -29,13 +28,13 @@ import { SITE_CONFIG } from '../config/site.ts';
             <p class="text-gray-600 mb-6">Personalized guidance to launch your software engineering career</p>
 
                 <div class="mb-4">
-                  <span class="text-5xl font-bold text-gray-900">${SITE_CONFIG.pricing.monthly}</span>
-                  <span class="text-xl text-gray-600">/month</span>
+                  <span class="text-5xl font-bold text-green-600">FREE</span>
+                  <span class="text-xl text-gray-600">forever</span>
                 </div>
 
             <div class="text-sm text-gray-600 mb-6">
-              <p>Affordable monthly investment in your future</p>
-              <p class="text-xs text-gray-500 mt-1">Less than $5 per day</p>
+              <p>Zero cost, maximum value</p>
+              <p class="text-xs text-gray-500 mt-1">No hidden fees or charges</p>
             </div>
           </div>
 
@@ -87,33 +86,32 @@ import { SITE_CONFIG } from '../config/site.ts';
               Start Your Journey
           </button>
 
-          <!-- Guarantees -->
+          <!-- Benefits -->
           <div class="text-center">
             <div class="flex items-center justify-center text-sm text-gray-600">
               <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
-              30-day money-back guarantee
+              Always free, no strings attached
             </div>
             <div class="flex items-center justify-center text-sm text-gray-600 mt-2">
               <svg class="w-4 h-4 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
               </svg>
-              Cancel anytime, no contracts
+              Flexible schedule, no commitment required
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Limited Spots Notice -->
+    <!-- Application Notice -->
     <div class="text-center mt-12">
-      <div class="inline-flex items-center bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">
+      <div class="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
         </svg>
-        Limited mentorship spots available
+        Simple application process — just fill out the form below
       </div>
     </div>
   </div>
