@@ -21,13 +21,13 @@ const { title, description = SITE_CONFIG.description } = Astro.props;
     <title>{title}</title>
     <link rel="stylesheet" href="/src/styles/global.css" />
 
-    <!-- Google Analytics 4 -->
     {import.meta.env.PUBLIC_GA_MEASUREMENT_ID && (
       <>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}></script>
         <script define:vars={{gaId: import.meta.env.PUBLIC_GA_MEASUREMENT_ID}}>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
           gtag('js', new Date());
           gtag('config', gaId);
         </script>
@@ -51,7 +51,7 @@ const { title, description = SITE_CONFIG.description } = Astro.props;
             <a href="#testimonials" class="text-gray-600 hover:text-gray-900 transition-colors">Testimonials</a>
                 <a href="#program" class="text-gray-600 hover:text-gray-900 transition-colors">Program</a>
             <button
-              onclick="document.getElementById('signup').scrollIntoView({behavior: 'smooth'})"
+              onclick="if(window.trackCTAClick) window.trackCTAClick('header_join_now'); document.getElementById('signup').scrollIntoView({behavior: 'smooth'});"
               class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium cursor-pointer"
             >
               Join Now
@@ -96,4 +96,52 @@ const { title, description = SITE_CONFIG.description } = Astro.props;
       });
     </script>
   </body>
+
+  <script>
+    // Analytics tracking utility
+    (window as any).analytics = {
+      track: function(eventName: string, properties: any = {}) {
+        const event = {
+          event_category: 'engagement',
+          value: 1,
+          ...properties
+        };
+
+        if (typeof (window as any).gtag === 'function') {
+          try {
+            (window as any).gtag('event', eventName, event);
+          } catch (error) {}
+        } else if (typeof (window as any).dataLayer !== 'undefined') {
+          (window as any).dataLayer.push({
+            event: eventName,
+            ...event
+          });
+        }
+      },
+
+      trackClick: function(buttonLabel: string) {
+        this.track('cta_click', {
+          event_label: buttonLabel,
+          button_location: buttonLabel.split('_')[0], // hero, header, etc.
+          button_action: buttonLabel.split('_').slice(1).join('_') // start_journey, join_now, etc.
+        });
+      },
+
+      trackFormSubmit: function() {
+        this.track('form_submit', {
+          event_label: 'mentorship_signup'
+        });
+      },
+
+      trackConversion: function(label: string) {
+        this.track('conversion', {
+          event_category: 'conversion',
+          event_label: label
+        });
+      }
+    };
+
+    // Compatibility
+    (window as any).trackCTAClick = (window as any).analytics.trackClick.bind((window as any).analytics);
+  </script>
 </html>

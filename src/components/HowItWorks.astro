@@ -71,7 +71,7 @@
     <!-- Call to Action -->
     <div class="text-center mt-16">
       <button
-        onclick="document.getElementById('signup').scrollIntoView({behavior: 'smooth'})"
+        onclick="if(window.trackCTAClick) window.trackCTAClick('how_it_works_begin'); document.getElementById('signup').scrollIntoView({behavior: 'smooth'});"
         class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer"
       >
         Begin Your Journey

@@ -17,7 +17,7 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
 
       <!-- Signup Form -->
       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
-        <form class="space-y-6" data-netlify="true" netlify-honeypot="bot-field" name="subscribe" action="/thank-you" method="POST">
+        <form class="space-y-6" data-netlify="true" netlify-honeypot="bot-field" name="subscribe" action="/thank-you" method="POST" onsubmit="if(window.trackFormSubmission) return window.trackFormSubmission(event); return true;">
           <!-- Netlify Configuration -->
           <p class="hidden">
             <label>
@@ -157,3 +157,12 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
     </div>
   </div>
 </section>
+
+<script>
+  (window as any).trackFormSubmission = function(event: Event) {
+    if ((window as any).analytics) {
+      (window as any).analytics.trackFormSubmit();
+    }
+    return true;
+  };
+</script>
