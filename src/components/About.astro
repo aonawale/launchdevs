@@ -2,18 +2,18 @@
 // About.astro - Short intro about me and why this program exists
 ---
 
-<section id="about" class="py-20 bg-white">
+<section id="about" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+      <div class="text-center mb-16 scroll-animate">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
           Guiding People Into Their Tech Careers
         </h2>
-        <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+        <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-violet-600 mx-auto rounded-full"></div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6">
+        <div class="space-y-6 scroll-animate">
           <p class="text-lg text-gray-600 leading-relaxed">
             Over the years, I've helped a diverse group of people break into software engineering —
             career changers from fields like teaching and accounting, university graduates looking for
@@ -26,40 +26,58 @@
             to landing your first software engineering role.
           </p>
 
-          <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
-            <p class="text-gray-800 font-medium italic">
+          <div class="relative bg-gradient-to-br from-blue-50 to-violet-50 p-6 rounded-2xl border-l-4 border-blue-600 shadow-sm">
+            <svg class="absolute top-4 right-4 w-8 h-8 text-blue-200" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="text-gray-800 font-medium italic relative z-10">
               "Starting a tech career doesn't have to be overwhelming. With the right guidance and
               a clear path, anyone can succeed in software engineering."
             </p>
           </div>
         </div>
 
-        <div class="bg-gray-50 p-8 rounded-xl">
-          <h3 class="text-xl font-bold text-gray-900 mb-4">What You'll Get</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-100 scroll-animate">
+          <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+            <span class="w-10 h-10 bg-gradient-to-br from-blue-600 to-violet-600 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span class="text-gray-700">Personalized learning roadmap from zero to hire</span>
+            </span>
+            What You'll Get
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex items-start group">
+              <div class="w-6 h-6 bg-green-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-green-200 transition-colors">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-700 leading-relaxed">Personalized learning roadmap from zero to hire</span>
             </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">Portfolio project guidance and code reviews</span>
+            <li class="flex items-start group">
+              <div class="w-6 h-6 bg-green-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-green-200 transition-colors">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-700 leading-relaxed">Portfolio project guidance and code reviews</span>
             </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">Resume building and interview preparation</span>
+            <li class="flex items-start group">
+              <div class="w-6 h-6 bg-green-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-green-200 transition-colors">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-700 leading-relaxed">Resume building and interview preparation</span>
             </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">Job search strategy and application support</span>
+            <li class="flex items-start group">
+              <div class="w-6 h-6 bg-green-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-green-200 transition-colors">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-700 leading-relaxed">Job search strategy and application support</span>
             </li>
           </ul>
         </div>

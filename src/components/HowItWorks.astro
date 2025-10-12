@@ -2,77 +2,108 @@
 // HowItWorks.astro - 4 steps: Sign up, Start Learning, Weekly Calls, Keep Growing
 ---
 
-<section id="how-it-works" class="py-20 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+<section id="how-it-works" class="py-24 bg-gray-50 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+    <div class="absolute top-1/4 -left-20 w-64 h-64 bg-blue-100 rounded-full filter blur-3xl"></div>
+    <div class="absolute bottom-1/4 -right-20 w-64 h-64 bg-violet-100 rounded-full filter blur-3xl"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-16 scroll-animate">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
         How It Works
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
         From learning to code to landing your first software engineering role — here's how we'll get you there.
       </p>
-      <div class="w-20 h-1 bg-blue-600 mx-auto mt-6"></div>
+      <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-violet-600 mx-auto rounded-full"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Step 1: Career Assessment -->
-      <div class="text-center group h-full">
-        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 h-full flex flex-col">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
-            <span class="text-2xl font-bold text-blue-600">1</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Career Assessment</h3>
-          <p class="text-gray-600 leading-relaxed flex-grow">
-            We'll discuss your background, career goals, and current situation. Together, we'll create a personalized roadmap tailored to your specific needs.
-          </p>
-        </div>
-      </div>
+    <div class="relative">
+      <!-- Connection line - hidden on mobile, visible on lg -->
+      <div class="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-violet-200 to-blue-200" style="top: 4rem;"></div>
 
-      <!-- Step 2: Learn & Build -->
-      <div class="text-center group h-full">
-        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 h-full flex flex-col">
-          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
-            <span class="text-2xl font-bold text-green-600">2</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Step 1: Career Assessment -->
+        <div class="text-center group h-full scroll-animate">
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col relative card-elevated">
+            <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg relative z-10">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+              </svg>
+            </div>
+            <div class="absolute top-8 right-8 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-sm font-bold text-blue-600">1</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Career Assessment</h3>
+            <p class="text-gray-600 leading-relaxed flex-grow">
+              We'll discuss your background, career goals, and current situation. Together, we'll create a personalized roadmap tailored to your specific needs.
+            </p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Learn & Build</h3>
-          <p class="text-gray-600 leading-relaxed flex-grow">
-            Start building real projects for your portfolio with my guidance. Get code reviews and learn industry best practices as you develop your skills.
-          </p>
         </div>
-      </div>
 
-      <!-- Step 3: Weekly Support -->
-      <div class="text-center group h-full">
-        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 h-full flex flex-col">
-          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
-            <span class="text-2xl font-bold text-purple-600">3</span>
+        <!-- Step 2: Learn & Build -->
+        <div class="text-center group h-full scroll-animate">
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col relative card-elevated">
+            <div class="w-20 h-20 bg-gradient-to-br from-violet-500 to-violet-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg relative z-10">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <div class="absolute top-8 right-8 w-8 h-8 bg-violet-100 rounded-full flex items-center justify-center">
+              <span class="text-sm font-bold text-violet-600">2</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Learn & Build</h3>
+            <p class="text-gray-600 leading-relaxed flex-grow">
+              Start building real projects for your portfolio with my guidance. Get code reviews and learn industry best practices as you develop your skills.
+            </p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Weekly Support</h3>
-          <p class="text-gray-600 leading-relaxed flex-grow">
-            Regular one-on-one sessions to review progress, debug issues, and stay motivated. Get answers to your questions and overcome obstacles.
-          </p>
         </div>
-      </div>
 
-      <!-- Step 4: Land the Job -->
-      <div class="text-center group h-full">
-        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 h-full flex flex-col">
-          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
-            <span class="text-2xl font-bold text-orange-600">4</span>
+        <!-- Step 3: Weekly Support -->
+        <div class="text-center group h-full scroll-animate">
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col relative card-elevated">
+            <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-violet-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg relative z-10">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+              </svg>
+            </div>
+            <div class="absolute top-8 right-8 w-8 h-8 bg-violet-100 rounded-full flex items-center justify-center">
+              <span class="text-sm font-bold text-violet-600">3</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Weekly Support</h3>
+            <p class="text-gray-600 leading-relaxed flex-grow">
+              Regular one-on-one sessions to review progress, debug issues, and stay motivated. Get answers to your questions and overcome obstacles.
+            </p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Land the Job</h3>
-          <p class="text-gray-600 leading-relaxed flex-grow">
-            Polish your portfolio, practice interviews, and navigate the job search process. Get ongoing support until you land your first engineering role.
-          </p>
+        </div>
+
+        <!-- Step 4: Land the Job -->
+        <div class="text-center group h-full scroll-animate">
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col relative card-elevated">
+            <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg relative z-10">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="absolute top-8 right-8 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+              <span class="text-sm font-bold text-green-600">4</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Land the Job</h3>
+            <p class="text-gray-600 leading-relaxed flex-grow">
+              Polish your portfolio, practice interviews, and navigate the job search process. Get ongoing support until you land your first engineering role.
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Call to Action -->
-    <div class="text-center mt-16">
+    <div class="text-center mt-16 scroll-animate">
       <button
         onclick="if(window.trackCTAClick) window.trackCTAClick('how_it_works_begin'); document.getElementById('signup').scrollIntoView({behavior: 'smooth'});"
-        class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer"
+        class="btn-primary bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer"
       >
         Begin Your Journey
       </button>

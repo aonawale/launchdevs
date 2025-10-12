@@ -2,24 +2,36 @@
 // Program.astro - Free mentorship program details
 ---
 
-<section id="program" class="py-20 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+<section id="program" class="py-24 bg-gray-50 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-green-100 rounded-full filter blur-3xl"></div>
+    <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-16 scroll-animate">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
         Free Software Engineering Mentorship
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
         Get dedicated guidance from an experienced software engineer to accelerate your journey
         into tech. Completely free — no hidden costs, no contracts, just genuine support.
       </p>
-      <div class="w-20 h-1 bg-blue-600 mx-auto mt-6"></div>
+      <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-violet-600 mx-auto rounded-full"></div>
     </div>
 
-    <div class="max-w-md mx-auto">
-      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden relative">
-        <!-- Free Badge -->
-        <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white text-center py-3 px-6">
-          <span class="text-sm font-semibold uppercase tracking-wide">🎯 100% Free Program</span>
+    <div class="max-w-lg mx-auto scroll-animate">
+      <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden relative group hover:shadow-3xl transition-all duration-500">
+        <!-- Free Badge with Animation -->
+        <div class="bg-gradient-to-r from-green-600 via-green-500 to-blue-600 text-white text-center py-3 px-6 relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 animate-shimmer"></div>
+          <span class="text-sm font-bold uppercase tracking-wide flex items-center justify-center gap-2 relative z-10">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            100% Free Program
+          </span>
         </div>
 
         <div class="p-8">
@@ -27,91 +39,96 @@
             <h3 class="text-2xl font-bold text-gray-900 mb-2">1:1 Mentorship Program</h3>
             <p class="text-gray-600 mb-6">Personalized guidance to launch your software engineering career</p>
 
-                <div class="mb-4">
-                  <span class="text-5xl font-bold text-green-600">FREE</span>
-                  <span class="text-xl text-gray-600">forever</span>
-                </div>
+            <div class="mb-5 relative">
+              <div class="inline-flex items-baseline gap-2 relative">
+                <span class="text-5xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent animate-pulse">FREE</span>
+                <span class="text-lg text-gray-600">forever</span>
+                <span class="text-xl">🎉</span>
+              </div>
+            </div>
 
-            <div class="text-sm text-gray-600 mb-6">
-              <p>Zero cost, maximum value</p>
-              <p class="text-xs text-gray-500 mt-1">No hidden fees or charges</p>
+            <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-3 border border-green-100">
+              <p class="text-gray-700 font-medium text-sm">Zero cost, maximum value</p>
+              <p class="text-xs text-gray-600 mt-0.5">No hidden fees or charges</p>
             </div>
           </div>
 
           <!-- Features List -->
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700"><strong>Weekly 1:1 mentoring sessions</strong> (45 minutes)</span>
+          <ul class="space-y-1 mb-8">
+            <li class="flex items-center group p-2 rounded-lg hover:bg-gray-50 transition-colors">
+              <div class="w-7 h-7 bg-green-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-green-200 group-hover:scale-110 transition-all">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-700 text-sm leading-snug"><strong>Weekly 1:1 mentoring sessions</strong> (45 minutes)</span>
             </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700"><strong>Personalized career roadmap</strong> and action plan</span>
+            <li class="flex items-center group p-2 rounded-lg hover:bg-gray-50 transition-colors">
+              <div class="w-7 h-7 bg-blue-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-blue-200 group-hover:scale-110 transition-all">
+                <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-700 text-sm leading-snug"><strong>Personalized career roadmap</strong> and action plan</span>
             </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700"><strong>24/7 Slack access</strong> for quick questions</span>
+            <li class="flex items-center group p-2 rounded-lg hover:bg-gray-50 transition-colors">
+              <div class="w-7 h-7 bg-violet-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-violet-200 group-hover:scale-110 transition-all">
+                <svg class="w-4 h-4 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-700 text-sm leading-snug"><strong>24/7 Slack access</strong> for quick questions</span>
             </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700"><strong>Resume & LinkedIn optimization</strong></span>
+            <li class="flex items-center group p-2 rounded-lg hover:bg-gray-50 transition-colors">
+              <div class="w-7 h-7 bg-green-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-green-200 group-hover:scale-110 transition-all">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-700 text-sm leading-snug"><strong>Resume & LinkedIn optimization</strong></span>
             </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700"><strong>Interview preparation</strong> and practice</span>
+            <li class="flex items-center group p-2 rounded-lg hover:bg-gray-50 transition-colors">
+              <div class="w-7 h-7 bg-blue-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-blue-200 group-hover:scale-110 transition-all">
+                <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-700 text-sm leading-snug"><strong>Interview preparation</strong> and practice</span>
             </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700"><strong>Exclusive networking opportunities</strong></span>
+            <li class="flex items-center group p-2 rounded-lg hover:bg-gray-50 transition-colors">
+              <div class="w-7 h-7 bg-violet-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-violet-200 group-hover:scale-110 transition-all">
+                <svg class="w-4 h-4 text-violet-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-gray-700 text-sm leading-snug"><strong>Exclusive networking opportunities</strong></span>
             </li>
           </ul>
 
           <!-- CTA Button -->
           <button
             onclick="if(window.trackCTAClick) window.trackCTAClick('program_start_journey'); document.getElementById('signup').scrollIntoView({behavior: 'smooth'});"
-            class="w-full bg-blue-600 text-white py-4 px-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl mb-4 cursor-pointer"
+            class="w-full btn-primary bg-gradient-to-r from-blue-600 to-violet-600 text-white py-4 px-6 rounded-xl text-base font-bold hover:from-blue-700 hover:to-violet-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-2xl mb-4 cursor-pointer"
           >
-              Start Your Journey
+            Start Your Journey
           </button>
 
           <!-- Benefits -->
-          <div class="text-center">
-            <div class="flex items-center justify-center text-sm text-gray-600">
-              <svg class="w-4 h-4 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <div class="text-center space-y-1.5">
+            <div class="flex items-center justify-center text-xs text-gray-600">
+              <svg class="w-3.5 h-3.5 mr-1.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               Always free, no strings attached
             </div>
-            <div class="flex items-center justify-center text-sm text-gray-600 mt-2">
-              <svg class="w-4 h-4 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <div class="flex items-center justify-center text-xs text-gray-600">
+              <svg class="w-3.5 h-3.5 mr-1.5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
               </svg>
               Flexible schedule, no commitment required
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Application Notice -->
-    <div class="text-center mt-12">
-      <div class="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
-        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-        </svg>
-        Simple application process — just fill out the form below
       </div>
     </div>
   </div>
