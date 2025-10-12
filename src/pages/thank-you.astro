@@ -65,9 +65,9 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
 </Layout>
 
 <script>
-  if ((window as any).analytics) {
-    (window as any).analytics.trackConversion('mentorship_signup_success');
-    (window as any).analytics.track('signup_complete', {
+  if (window.analytics) {
+    window.analytics.trackConversion('mentorship_signup_success');
+    window.analytics.track('signup_complete', {
       event_label: 'thank_you_page_reached'
     });
   }

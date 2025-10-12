@@ -17,7 +17,7 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
 
       <!-- Signup Form -->
       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
-        <form class="space-y-6" data-netlify="true" netlify-honeypot="bot-field" name="subscribe" action="/thank-you" method="POST" onsubmit="if(window.trackFormSubmission) return window.trackFormSubmission(event); return true;">
+        <form id="mentorship-form" class="space-y-6" data-netlify="true" netlify-honeypot="bot-field" name="subscribe" action="/thank-you" method="POST" onsubmit="if(window.trackFormSubmission) return window.trackFormSubmission(); return true;" aria-label="Mentorship signup form">
           <!-- Netlify Configuration -->
           <p class="hidden">
             <label>
@@ -36,6 +36,8 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
                 id="firstName"
                 name="firstName"
                 required
+                aria-required="true"
+                aria-label="First name"
                 class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
                 placeholder="Your first name"
               />
@@ -49,6 +51,8 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
                 id="lastName"
                 name="lastName"
                 required
+                aria-required="true"
+                aria-label="Last name"
                 class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
                 placeholder="Your last name"
               />
@@ -64,6 +68,8 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
               id="email"
               name="email"
               required
+              aria-required="true"
+              aria-label="Email address"
               class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
               placeholder="your.email@example.com"
             />
@@ -77,6 +83,8 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
               id="currentSituation"
               name="currentSituation"
               required
+              aria-required="true"
+              aria-label="Current situation"
               class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
             >
               <option value="" class="text-gray-900">Select your situation</option>
@@ -97,6 +105,7 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
               id="goals"
               name="goals"
               rows="3"
+              aria-label="Career goals"
               class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent resize-none"
               placeholder="What do you want to achieve in your career?"
             ></textarea>
@@ -104,6 +113,7 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
 
           <button
             type="submit"
+            aria-label="Submit mentorship application"
             class="w-full bg-white text-blue-700 py-4 px-8 rounded-lg text-lg font-bold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer"
           >
             🚀 Start My Mentorship Journey
@@ -113,20 +123,20 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
         <!-- Trust Indicators -->
         <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-blue-100">
           <div class="flex items-center">
-            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
             </svg>
             Your info is private
           </div>
           <div class="flex items-center">
-            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
             </svg>
             No spam, ever
           </div>
           <div class="flex items-center">
-            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
             </svg>
             Free consultation call
@@ -137,7 +147,7 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
       <!-- Value Message -->
       <div class="bg-white/10 backdrop-blur-sm text-white rounded-xl p-6 mb-8 border border-white/20">
         <div class="flex items-center justify-center mb-2">
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
             <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
           </svg>
           <span class="font-bold">What Happens Next?</span>
@@ -159,10 +169,12 @@ import { SITE_CONFIG, getEmailLink } from '../config/site.ts';
 </section>
 
 <script>
-  (window as any).trackFormSubmission = function(event: Event) {
-    if ((window as any).analytics) {
-      (window as any).analytics.trackFormSubmit();
+  window.trackFormSubmission = function(): boolean {
+    // Track analytics
+    if (window.analytics) {
+      window.analytics.trackFormSubmit();
     }
+
     return true;
   };
 </script>

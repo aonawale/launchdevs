@@ -3,15 +3,16 @@ export const SITE_CONFIG = {
   // Business Information
   name: 'LaunchDevs',
   description: 'Personal mentorship to launch your software engineering career',
+  siteUrl: 'https://launchdevs.io',
 
   // Contact Information
   email: 'ahmed@launchdevs.io',
 
-  // Social Links (add your actual links when ready)
+  // Social Links
   social: {
-    linkedin: 'https://www.linkedin.com/in/ahmedonawale', // Replace with your LinkedIn URL
-    twitter: 'https://github.com/aonawale',  // Replace with your Twitter URL (optional)
-    github: 'https://x.com/ahmedonawale',   // Replace with your GitHub URL (optional)
+    linkedin: 'https://www.linkedin.com/in/ahmedonawale',
+    twitter: 'https://x.com/ahmedonawale',
+    github: 'https://github.com/aonawale',
   },
 
 

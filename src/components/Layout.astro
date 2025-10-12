@@ -15,20 +15,70 @@ const { title, description = SITE_CONFIG.description } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2563eb" />
     <meta name="description" content={description} />
+    <meta name="keywords" content={SITE_CONFIG.keywords.join(', ')} />
+    <meta name="author" content={SITE_CONFIG.author} />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={`${SITE_CONFIG.siteUrl}${Astro.url.pathname}`} />
     <title>{title}</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`${SITE_CONFIG.siteUrl}${Astro.url.pathname}`} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${SITE_CONFIG.siteUrl}/og-image.png`} />
+    <meta property="og:site_name" content={SITE_CONFIG.name} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={`${SITE_CONFIG.siteUrl}${Astro.url.pathname}`} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${SITE_CONFIG.siteUrl}/og-image.png`} />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": SITE_CONFIG.name,
+      "url": SITE_CONFIG.siteUrl,
+      "logo": `${SITE_CONFIG.siteUrl}/favicon.svg`,
+      "description": SITE_CONFIG.description,
+      "email": SITE_CONFIG.email,
+      "sameAs": [
+        SITE_CONFIG.social.linkedin,
+        SITE_CONFIG.social.twitter,
+        SITE_CONFIG.social.github
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": SITE_CONFIG.author,
+        "email": SITE_CONFIG.email,
+        "jobTitle": "Software Engineering Mentor",
+        "sameAs": [
+          SITE_CONFIG.social.linkedin,
+          SITE_CONFIG.social.twitter,
+          SITE_CONFIG.social.github
+        ]
+      }
+    })} />
 
     {import.meta.env.PUBLIC_GA_MEASUREMENT_ID && (
       <>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}></script>
         <script define:vars={{gaId: import.meta.env.PUBLIC_GA_MEASUREMENT_ID}}>
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          function gtag(command, config, params) {
+            window.dataLayer?.push({ event: command, config, ...params });
+          }
           window.gtag = gtag;
-          gtag('js', new Date());
+          gtag('js', new Date().toISOString());
           gtag('config', gaId);
         </script>
       </>
@@ -57,17 +107,45 @@ const { title, description = SITE_CONFIG.description } = Astro.props;
               Join Now
             </button>
           </nav>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-gray-900 transition-colors" aria-label="Toggle mobile menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100">
+        <nav class="px-4 py-4 space-y-3">
+          <a href="#about" class="block text-gray-600 hover:text-gray-900 transition-colors py-2">About</a>
+          <a href="#how-it-works" class="block text-gray-600 hover:text-gray-900 transition-colors py-2">How It Works</a>
+          <a href="#testimonials" class="block text-gray-600 hover:text-gray-900 transition-colors py-2">Testimonials</a>
+          <a href="#program" class="block text-gray-600 hover:text-gray-900 transition-colors py-2">Program</a>
+          <button
+            onclick="if(window.trackCTAClick) window.trackCTAClick('mobile_menu_join_now'); document.getElementById('signup').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobile-menu').classList.add('hidden');"
+            class="w-full bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium cursor-pointer text-center"
+          >
+            Join Now
+          </button>
+        </nav>
       </div>
     </header>
 
-    <main class="pt-16">
+    <main id="main-content" class="pt-16">
       <slot />
     </main>
 
     <footer class="bg-gray-50 border-t border-gray-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="text-center">
+          <div class="flex justify-center space-x-6 mb-4">
+            <a href="/privacy" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Privacy Policy</a>
+            <span class="text-gray-400">|</span>
+            <a href="/terms" class="text-gray-600 hover:text-gray-900 transition-colors text-sm">Terms of Service</a>
+          </div>
           <p class="text-gray-600">
             © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
           </p>
@@ -89,59 +167,44 @@ const { title, description = SITE_CONFIG.description } = Astro.props;
               const targetElement = document.getElementById(targetId);
               if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
+
+                // Focus the target element for accessibility (especially for skip link)
+                targetElement.focus();
+
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) {
+                  mobileMenu.classList.add('hidden');
+                }
               }
             }
           });
         });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+              mobileMenu.classList.remove('hidden');
+              mobileMenuButton.setAttribute('aria-expanded', 'true');
+            } else {
+              mobileMenu.classList.add('hidden');
+              mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
+          });
+        }
       });
     </script>
   </body>
 
   <script>
-    // Analytics tracking utility
-    (window as any).analytics = {
-      track: function(eventName: string, properties: any = {}) {
-        const event = {
-          event_category: 'engagement',
-          value: 1,
-          ...properties
-        };
+    import { initAnalytics } from '../utils/analytics';
 
-        if (typeof (window as any).gtag === 'function') {
-          try {
-            (window as any).gtag('event', eventName, event);
-          } catch (error) {}
-        } else if (typeof (window as any).dataLayer !== 'undefined') {
-          (window as any).dataLayer.push({
-            event: eventName,
-            ...event
-          });
-        }
-      },
-
-      trackClick: function(buttonLabel: string) {
-        this.track('cta_click', {
-          event_label: buttonLabel,
-          button_location: buttonLabel.split('_')[0], // hero, header, etc.
-          button_action: buttonLabel.split('_').slice(1).join('_') // start_journey, join_now, etc.
-        });
-      },
-
-      trackFormSubmit: function() {
-        this.track('form_submit', {
-          event_label: 'mentorship_signup'
-        });
-      },
-
-      trackConversion: function(label: string) {
-        this.track('conversion', {
-          event_category: 'conversion',
-          event_label: label
-        });
-      }
-    };
-
-    // Compatibility
-    (window as any).trackCTAClick = (window as any).analytics.trackClick.bind((window as any).analytics);
+    // Initialize analytics utilities
+    initAnalytics();
   </script>
 </html>

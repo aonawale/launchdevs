@@ -1,0 +1,134 @@
+---
+import Layout from '../components/Layout.astro';
+import { SITE_CONFIG } from '../config/site.ts';
+---
+
+<Layout title={`Terms of Service - ${SITE_CONFIG.name}`}>
+  <div class="min-h-screen bg-white py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Terms of Service</h1>
+      <p class="text-gray-600 mb-8">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+      <div class="prose prose-lg max-w-none">
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
+          <p class="text-gray-700 mb-4">
+            By accessing and using {SITE_CONFIG.name}'s mentorship services, you accept and agree to be
+            bound by the terms and provisions of this agreement.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Mentorship Program</h2>
+          <p class="text-gray-700 mb-4">
+            {SITE_CONFIG.name} offers a free software engineering mentorship program that includes:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Weekly one-on-one mentoring sessions</li>
+            <li>Personalized career roadmap and action plan</li>
+            <li>Access to communication channels for questions</li>
+            <li>Resume and interview preparation support</li>
+          </ul>
+          <p class="text-gray-700 mt-4">
+            The program is provided at no cost to accepted participants. There are no hidden fees or charges.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Eligibility and Acceptance</h2>
+          <p class="text-gray-700 mb-4">
+            The mentorship program is designed for individuals who are:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Looking to start a career in software engineering</li>
+            <li>Transitioning from other careers into tech</li>
+            <li>Recent graduates or current students</li>
+            <li>Self-taught developers seeking guidance</li>
+          </ul>
+          <p class="text-gray-700 mt-4">
+            Acceptance into the program is at the sole discretion of {SITE_CONFIG.name} and is based
+            on available capacity and fit with the program.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Participant Responsibilities</h2>
+          <p class="text-gray-700 mb-4">
+            As a participant, you agree to:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Actively participate in scheduled mentoring sessions</li>
+            <li>Complete assigned tasks and projects</li>
+            <li>Communicate respectfully and professionally</li>
+            <li>Provide timely notice if you need to reschedule sessions</li>
+            <li>Be committed to your career development</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">5. No Guarantees</h2>
+          <p class="text-gray-700 mb-4">
+            While we strive to provide excellent guidance and support, {SITE_CONFIG.name} does not
+            guarantee job placement, specific outcomes, or results. Success depends on individual
+            effort, market conditions, and various other factors beyond our control.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">6. Termination</h2>
+          <p class="text-gray-700 mb-4">
+            Either party may terminate the mentorship relationship at any time. {SITE_CONFIG.name}
+            reserves the right to discontinue mentorship services if a participant:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Fails to actively participate</li>
+            <li>Engages in disrespectful or unprofessional behavior</li>
+            <li>Violates these terms of service</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Intellectual Property</h2>
+          <p class="text-gray-700 mb-4">
+            All materials, resources, and content provided during the mentorship remain the property
+            of their respective owners. You may not redistribute or sell any materials provided without
+            explicit permission.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Limitation of Liability</h2>
+          <p class="text-gray-700 mb-4">
+            {SITE_CONFIG.name} and its mentors shall not be liable for any indirect, incidental,
+            special, consequential, or punitive damages resulting from your use of or inability to
+            use the mentorship services.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">9. Changes to Terms</h2>
+          <p class="text-gray-700 mb-4">
+            We reserve the right to modify these terms at any time. We will notify participants of
+            any material changes. Continued participation after changes constitutes acceptance of the
+            new terms.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">10. Contact Information</h2>
+          <p class="text-gray-700 mb-4">
+            For questions about these Terms of Service, please contact:
+          </p>
+          <p class="text-gray-700">
+            Email: <a href={`mailto:${SITE_CONFIG.email}`} class="text-blue-600 hover:underline">{SITE_CONFIG.email}</a>
+          </p>
+        </section>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <a href="/" class="text-blue-600 hover:underline">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+

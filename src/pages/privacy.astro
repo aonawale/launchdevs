@@ -1,0 +1,103 @@
+---
+import Layout from '../components/Layout.astro';
+import { SITE_CONFIG } from '../config/site.ts';
+---
+
+<Layout title={`Privacy Policy - ${SITE_CONFIG.name}`}>
+  <div class="min-h-screen bg-white py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
+      <p class="text-gray-600 mb-8">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+      <div class="prose prose-lg max-w-none">
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Information We Collect</h2>
+          <p class="text-gray-700 mb-4">
+            When you sign up for our mentorship program, we collect the following information:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Name (first and last)</li>
+            <li>Email address</li>
+            <li>Current situation (career status)</li>
+            <li>Career goals (optional)</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">2. How We Use Your Information</h2>
+          <p class="text-gray-700 mb-4">
+            We use the information we collect to:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Respond to your mentorship application</li>
+            <li>Schedule consultation calls</li>
+            <li>Provide personalized mentorship guidance</li>
+            <li>Communicate about your progress and program updates</li>
+            <li>Improve our mentorship program</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Information Sharing</h2>
+          <p class="text-gray-700 mb-4">
+            We do not sell, trade, or otherwise transfer your personal information to third parties.
+            Your information is only used for the purposes of providing mentorship services.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Data Security</h2>
+          <p class="text-gray-700 mb-4">
+            We implement appropriate security measures to protect your personal information.
+            Your data is stored securely and access is limited to authorized personnel only.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">5. Cookies and Analytics</h2>
+          <p class="text-gray-700 mb-4">
+            We use cookies and analytics tools (such as Google Analytics) to understand how visitors
+            use our website. This helps us improve our services. You can disable cookies in your
+            browser settings if you prefer.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">6. Your Rights</h2>
+          <p class="text-gray-700 mb-4">
+            You have the right to:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Access the personal information we hold about you</li>
+            <li>Request correction of any inaccurate information</li>
+            <li>Request deletion of your personal information</li>
+            <li>Opt-out of communications at any time</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Changes to This Policy</h2>
+          <p class="text-gray-700 mb-4">
+            We may update this privacy policy from time to time. We will notify you of any changes
+            by posting the new policy on this page and updating the "Last updated" date.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Contact Us</h2>
+          <p class="text-gray-700 mb-4">
+            If you have any questions about this Privacy Policy, please contact us at:
+          </p>
+          <p class="text-gray-700">
+            Email: <a href={`mailto:${SITE_CONFIG.email}`} class="text-blue-600 hover:underline">{SITE_CONFIG.email}</a>
+          </p>
+        </section>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <a href="/" class="text-blue-600 hover:underline">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
