@@ -38,34 +38,31 @@ A modern, accessible landing page for a software engineering mentorship program 
 │   └── robots.txt
 ├── src/
 │   ├── components/
-│   │   ├── icons/           # Reusable icon components
-│   │   │   ├── CheckIcon.astro
-│   │   │   ├── StarIcon.astro
-│   │   │   ├── LockIcon.astro
-│   │   │   └── MailIcon.astro
 │   │   ├── About.astro      # About section
 │   │   ├── CTA.astro        # Call-to-action & signup form
 │   │   ├── Hero.astro       # Hero section
 │   │   ├── HowItWorks.astro # Process steps
 │   │   ├── Layout.astro     # Base layout with header/footer
 │   │   ├── Program.astro    # Program details
-│   │   └── Testimonials.astro
+│   │   └── Testimonials.astro # Testimonials section
 │   ├── config/
 │   │   └── site.ts          # Site configuration constants
 │   ├── pages/
+│   │   ├── 404.astro        # 404 error page
 │   │   ├── index.astro      # Home page
-│   │   ├── thank-you.astro  # Form submission success
 │   │   ├── privacy.astro    # Privacy policy
 │   │   ├── terms.astro      # Terms of service
-│   │   └── 404.astro        # 404 error page
+│   │   └── thanks.astro     # Form submission success
 │   ├── styles/
 │   │   └── global.css       # Global styles (Tailwind imports)
 │   └── utils/
 │       └── analytics.ts     # Analytics utilities
 ├── astro.config.mjs         # Astro configuration
+├── eslint.config.js         # ESLint configuration
 ├── netlify.toml             # Netlify build configuration
-├── package.json
-├── tsconfig.json
+├── package.json             # Project dependencies
+├── tsconfig.json            # TypeScript configuration
+├── yarn.lock                # Yarn lockfile
 └── README.md
 ```
 
@@ -187,7 +184,7 @@ The site includes Google Analytics 4 integration with custom event tracking:
 
 - **CTA Clicks**: Tracked with location and action
 - **Form Submissions**: Tracked on successful form submit
-- **Conversions**: Tracked on thank-you page
+- **Conversions**: Tracked on thanks page
 
 Events are tracked using the utility functions in `src/utils/analytics.ts`.
 
